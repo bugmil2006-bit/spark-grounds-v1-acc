@@ -1,0 +1,1397 @@
+/* --- Variabile de Culoare & Resetare Globală --- */
+:root {
+    --black: #121212;
+    --dark-grey: #1e1e1e;
+    --sunset-orange: #ff7e5f;
+    --sunset-yellow: #feb47b;
+    --text-light: #f5f5f5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--black);
+    color: var(--text-light);
+    line-height: 1.6;
+    overflow-x: hidden; /* Previne scroll-ul orizontal stricat de slider */
+}
+
+/* --- Bara de Navigare --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background-color: rgba(18, 18, 18, 0.95);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid var(--sunset-orange);
+}
+
+.nav-logo {
+    height: 45px;
+    width: auto;
+    display: block;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--sunset-yellow);
+}
+
+/* --- Secțiunea Modelului 3D --- */
+.map-section {
+    margin-top: 80px; 
+    padding: 60px 20px 20px 20px;
+    text-align: center;
+    background-color: var(--black);
+}
+
+.map-section h2 {
+    color: var(--sunset-orange);
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    background: -webkit-linear-gradient(left, var(--sunset-orange), var(--sunset-yellow));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.model-container {
+    max-width: 1000px;
+    height: 600px;
+    margin: 0 auto;
+    border: 2px solid var(--dark-grey);
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #1a1a1a;
+    transition: box-shadow 0.4s ease;
+}
+
+/* Efectul de Glow Portocaliu la hover */
+.model-container:hover {
+    box-shadow: 0 0 40px 12px rgba(255, 126, 95, 0.9);
+}
+
+model-viewer {
+    width: 100%;
+    height: 100%;
+    outline: none; 
+}
+
+/* --- Secțiunea de Poveste --- */
+.story-section {
+    padding: 40px 20px 60px 20px;
+    background-color: var(--black);
+    display: flex;
+    justify-content: center;
+}
+
+.story-container {
+    max-width: 800px;
+    width: 100%;
+    padding: 40px;
+    background: linear-gradient(145deg, #1a1a1a, #121212);
+    border-left: 4px solid var(--sunset-orange);
+    border-radius: 8px;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.story-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px rgba(255, 126, 95, 0.15);
+}
+
+.story-title {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    background: -webkit-linear-gradient(left, var(--sunset-yellow), var(--sunset-orange));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+}
+
+.story-text {
+    font-size: 1.15rem;
+    color: #d1d1d1;
+    line-height: 1.8;
+    font-style: italic;
+}
+
+.story-accent-line {
+    width: 60px;
+    height: 3px;
+    background: var(--sunset-orange);
+    margin-top: 25px;
+    border-radius: 2px;
+}
+
+/* --- Secțiunea Carusel Video --- */
+.video-section {
+    padding: 60px 20px 100px 20px;
+    text-align: center;
+    background-color: var(--black);
+}
+
+.video-section h2 {
+    color: var(--sunset-yellow);
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.carousel-btn {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 3rem;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+    z-index: 20;
+    padding: 0 20px;
+}
+
+.carousel-btn:hover {
+    color: var(--sunset-orange);
+    transform: scale(1.1);
+}
+
+.video-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 600px;
+}
+
+.video-wrapper.slide {
+    position: absolute;
+    transition: all 0.5s ease;
+    width: 320px;
+    height: 550px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #000;
+}
+
+/* Efect glow pentru video center la hover */
+.video-wrapper.slide.center:hover {
+    box-shadow: 0 0 40px 12px rgba(255, 126, 95, 0.9);
+}
+
+.video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Logica de poziționare a slide-urilor */
+.slide.center {
+    transform: translateX(0) scale(1);
+    z-index: 10;
+    border: 3px solid var(--sunset-orange);
+    box-shadow: 0 0 25px rgba(255, 126, 95, 0.5);
+    opacity: 1;
+}
+
+.slide.left {
+    transform: translateX(-110%) scale(0.85);
+    z-index: 5;
+    opacity: 0.4;
+    border: 1px solid var(--dark-grey);
+}
+
+.slide.right {
+    transform: translateX(110%) scale(0.85);
+    z-index: 5;
+    opacity: 0.4;
+    border: 1px solid var(--dark-grey);
+}
+
+/* --- Footer --- */
+.footer-section {
+    padding: 60px 20px;
+    background: linear-gradient(to top, #050505, var(--black));
+    text-align: center;
+    border-top: 2px solid var(--dark-grey);
+}
+
+.footer-logo {
+    height: 50px;
+    width: auto;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.footer-content p {
+    color: var(--text-light);
+    margin-bottom: 5px;
+}
+
+.footer-email {
+    display: inline-block;
+    margin: 10px 0 25px 0;
+    color: var(--sunset-yellow);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footer-email:hover {
+    color: var(--sunset-orange);
+}
+
+.copyright {
+    color: #555 !important;
+    font-size: 0.9rem;
+}
+
+/* --- Responsivitate Mobile --- */
+@media (max-width: 900px) {
+    .nav-links {
+        display: none; /* Ascundem link-urile pe mobil pt spațiu curat momentan */
+    }
+    .slide.left {
+        transform: translateX(-60%) scale(0.7);
+    }
+    .slide.right {
+        transform: translateX(60%) scale(0.7);
+    }
+    .video-wrapper.slide {
+        width: 260px;
+        height: 450px;
+    }
+    .model-container {
+        height: 400px;
+    }
+}
+/* =========================================
+   PAGINA BILETE (CARDURI & HOTLINK)
+   ========================================= */
+
+.page-header {
+    margin-top: 75px; 
+    padding: 80px 20px 40px 20px;
+    text-align: center;
+    background: linear-gradient(to bottom, var(--dark-grey), var(--black));
+    border-bottom: 1px solid #333;
+}
+
+.header-content h1 {
+    font-size: 3rem;
+    background: -webkit-linear-gradient(left, var(--sunset-orange), var(--sunset-yellow));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.header-content p {
+    font-size: 1.2rem;
+    color: #ccc;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.tickets-section {
+    padding: 60px 20px 100px 20px;
+    background-color: var(--black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Grila de Carduri */
+.tickets-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin-bottom: 60px;
+}
+
+.ticket-card {
+    background: linear-gradient(145deg, #1a1a1a, #121212);
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 40px 30px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.ticket-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--sunset-yellow);
+    box-shadow: 0 15px 40px rgba(254, 180, 123, 0.2);
+}
+
+.ticket-card h3 {
+    color: var(--text-light);
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.ticket-card .price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--sunset-orange);
+    margin-bottom: 5px;
+}
+
+.ticket-card .duration {
+    color: #888;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 15px;
+}
+
+.ticket-card p {
+    color: #ccc;
+    font-size: 1rem;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+/* Evidențierea Cardului Popular */
+.popular-ticket {
+    border: 2px solid var(--sunset-orange);
+    transform: scale(1.05);
+}
+
+.popular-ticket:hover {
+    transform: scale(1.05) translateY(-5px); /* Păstrează mărimea și se ridică puțin */
+}
+
+.ticket-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(45deg, var(--sunset-orange), var(--sunset-yellow));
+    color: var(--black);
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/* --- HOTLINK REGULAMENT --- */
+.regulament-container {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    padding: 30px;
+    background-color: var(--dark-grey);
+    border-radius: 10px;
+    border-left: 4px solid red;
+    max-width: 800px;
+    width: 100%;
+}
+
+.regulament-text {
+    color: #ccc;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.hotlink-regulament {
+    display: inline-block;
+    color: var(--text-light);
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 2px dashed #ff3333; /* Linie punctată roșie pentru atenție */
+    padding-bottom: 5px;
+    transition: all 0.3s ease;
+}
+
+.hotlink-regulament .icon {
+    margin-right: 8px;
+}
+
+/* Efectul de Hover pe Hotlink */
+.hotlink-regulament:hover {
+    color: #ff3333;
+    border-bottom: 2px solid #ff3333; /* Linia devine solidă */
+    transform: translateX(5px); /* Se mișcă fin spre dreapta */
+    text-shadow: 0 0 15px rgba(255, 51, 51, 0.4);
+}
+
+/* Info Reduceri */
+.discount-info {
+    max-width: 800px;
+    text-align: center;
+    color: #888;
+    font-size: 0.95rem;
+    font-style: italic;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+}
+
+.discount-info strong {
+    color: var(--sunset-yellow);
+}
+
+/* Responsivitate Mobil */
+@media (max-width: 800px) {
+    .popular-ticket {
+        transform: scale(1);
+    }
+    .popular-ticket:hover {
+        transform: translateY(-5px);
+    }
+    .hotlink-regulament {
+        font-size: 1.1rem;
+    }
+}
+/* =========================================
+   PAGINA REGULAMENT LEGAL
+   ========================================= */
+
+.rules-section {
+    padding: 60px 20px 100px 20px;
+    background-color: var(--black);
+    display: flex;
+    justify-content: center;
+}
+
+.rules-container {
+    max-width: 900px;
+    width: 100%;
+    background-color: #161616;
+    padding: 50px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Caseta de avertizare legală */
+.legal-warning {
+    background: rgba(255, 51, 51, 0.1);
+    border-left: 5px solid #ff3333;
+    color: #ffcccc;
+    padding: 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    border-radius: 0 5px 5px 0;
+}
+
+.legal-warning strong {
+    color: #ff3333;
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Blocurile cu reguli (Reparate și Curățate) */
+.rule-block {
+    margin-bottom: 40px;
+}
+
+.rule-block h2 {
+    color: var(--sunset-orange);
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+
+.rule-block ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.rule-block li {
+    color: #ccc;
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    /* Un mic spațiu în stânga pentru a arăta ca o listă oficială */
+    padding-left: 15px; 
+    border-left: 2px solid transparent; /* Pregătim o margine fină la hover (opțional) */
+}
+
+/* Stilul natural și cursiv pentru textul îngroșat (număr + subtitlu) */
+/* Am șters forțarea de lățime fixă și poziționarea absolută */
+.rule-block li strong {
+    color: var(--sunset-yellow);
+    display: inline; /* Asigură curgerea normală a textului, inline */
+    margin-right: 5px;
+    width: auto; /* Anulăm lățimea fixă anterioară */
+    position: static; /* Anulăm poziționarea absolută anterioară */
+}
+
+/* Opțional: o mică interacțiune vizuală când citești o regulă */
+.rule-block li:hover {
+    border-left: 2px solid var(--dark-grey);
+}
+
+/* Pe mobil lăsăm textul să ocupe tot spațiul */
+@media (max-width: 768px) {
+    .rules-container {
+        padding: 30px 20px;
+    }
+    .rule-block li {
+        padding-left: 0;
+        border-left: none;
+    }
+}
+/* Concluzia de la final */
+.signature-box {
+    margin-top: 50px;
+    padding: 30px;
+    background: linear-gradient(145deg, #1a1a1a, #121212);
+    border: 2px dashed var(--sunset-orange);
+    text-align: center;
+    border-radius: 8px;
+}
+
+.signature-box p {
+    color: var(--sunset-yellow);
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+/* Responsivitate pentru ecrane mici */
+@media (max-width: 768px) {
+    .rules-container {
+        padding: 30px 20px;
+    }
+    .rule-block li {
+        padding-left: 0;
+    }
+    .rule-block li strong:first-child {
+        position: static;
+        display: inline-block;
+        margin-right: 5px;
+    }
+}
+/* =========================================
+   PAGINA EVENIMENTE (GRAND OPENING & PLUS BTN)
+   ========================================= */
+
+.events-header {
+    position: relative;
+    padding-bottom: 60px; /* Facem loc pentru butonul + */
+}
+
+/* --- Butonul '+' (Propune Eveniment) --- */
+.add-event-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    background: transparent;
+    border: 2px solid var(--sunset-orange);
+    color: var(--text-light);
+    border-radius: 30px;
+    padding: 8px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.add-event-btn .plus-icon {
+    color: var(--sunset-orange);
+    font-size: 1.5rem;
+    line-height: 1;
+    margin-right: 10px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.add-event-btn .btn-text {
+    transition: color 0.3s ease;
+}
+
+.add-event-btn:hover {
+    background: var(--sunset-orange);
+    box-shadow: 0 0 20px rgba(255, 126, 95, 0.4);
+    transform: translateY(-3px);
+}
+
+.add-event-btn:hover .plus-icon,
+.add-event-btn:hover .btn-text {
+    color: var(--black);
+}
+
+.add-event-btn:hover .plus-icon {
+    transform: rotate(90deg); /* Animație cool la hover */
+}
+
+/* --- Secțiunea Evenimentelor --- */
+.events-main-section {
+    padding: 20px 20px 100px 20px;
+    background-color: var(--black);
+    display: flex;
+    justify-content: center;
+}
+
+.events-grid {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 900px; /* Mai lat pentru a acomoda un singur eveniment major */
+}
+
+/* --- Cardul Grand Opening --- */
+.event-card-link {
+    text-decoration: none;
+    display: block;
+    color: inherit;
+    width: 100%;
+}
+
+.event-card {
+    background: linear-gradient(145deg, #1a1a1a, #121212);
+    border: 1px solid #333;
+    padding: 40px;
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.4s ease;
+}
+
+/* Stil specific pentru Grand Opening */
+.grand-opening-card {
+    border-left: 5px solid var(--sunset-orange);
+    border-right: 5px solid var(--sunset-yellow);
+}
+
+/* Efectul de Light Hover (Glow) */
+.grand-opening-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--sunset-orange);
+    box-shadow: 0 15px 40px rgba(255, 126, 95, 0.25), inset 0 0 20px rgba(254, 180, 123, 0.05);
+}
+
+.event-status {
+    position: absolute;
+    top: -15px;
+    left: 40px;
+    background: var(--sunset-orange);
+    color: var(--black);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.event-date {
+    color: var(--sunset-yellow);
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.event-card h3 {
+    color: var(--text-light);
+    margin-bottom: 20px;
+    font-size: 2.2rem;
+}
+
+.event-card p {
+    color: #ccc;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.read-more {
+    display: inline-block;
+    color: var(--sunset-orange);
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Animație pentru săgeată la hover pe întregul card */
+.grand-opening-card:hover .read-more {
+    transform: translateX(10px);
+    color: var(--sunset-yellow);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .event-card {
+        padding: 30px 20px;
+    }
+    .event-card h3 {
+        font-size: 1.8rem;
+    }
+    .add-event-btn {
+        margin-top: 20px;
+    }
+}
+/* =========================================
+   PAGINA ȘCOALĂ (VERSIUNEA COLABORARE)
+   ========================================= */
+
+.school-hero-large {
+    margin-top: 80px;
+    padding: 100px 20px;
+    background: radial-gradient(circle at center, #1a1a1a 0%, var(--black) 100%);
+    text-align: center;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container Logouri Gigant */
+.mega-collab-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.mega-logo {
+    height: 120px; /* Dimensiune mult mai mare pentru impact */
+    width: auto;
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.1));
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.4s ease;
+}
+
+.mega-logo:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 30px var(--sunset-orange));
+}
+
+.mega-x {
+    color: var(--sunset-orange);
+    font-size: 5rem; /* X-ul de colaborare foarte mare */
+    font-weight: 200;
+    line-height: 1;
+}
+
+/* Text Parteneriat */
+.partnership-text {
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+}
+
+.partnership-text h2 {
+    font-size: 2.5rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
+
+.partnership-text p {
+    font-size: 1.25rem;
+    color: #bbb;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.partnership-text strong {
+    color: var(--sunset-yellow);
+}
+
+/* Butonul Huge de Înscriere */
+.enrollment-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.enroll-notice {
+    color: #888;
+    font-style: italic;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.enroll-btn-huge {
+    padding: 25px 60px;
+    font-size: 1.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--black);
+    background: linear-gradient(45deg, var(--sunset-orange), var(--sunset-yellow));
+    border-radius: 50px;
+    box-shadow: 0 10px 40px rgba(255, 126, 95, 0.4);
+    transition: all 0.4s ease;
+    border: none;
+    letter-spacing: 1px;
+}
+
+.enroll-btn-huge:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 50px rgba(255, 126, 95, 0.6);
+    filter: brightness(1.1);
+}
+
+/* Responsivitate pentru ecrane mici */
+@media (max-width: 800px) {
+    .mega-collab-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .mega-logo {
+        height: 80px;
+    }
+    .mega-x {
+        font-size: 3rem;
+        transform: rotate(90deg); /* X-ul devine vertical pe mobil */
+    }
+    .partnership-text h2 {
+        font-size: 1.8rem;
+    }
+    .enroll-btn-huge {
+        font-size: 1.3rem;
+        padding: 20px 40px;
+    }
+}
+/* =========================================
+   PAGINA CONTACT
+   ========================================= */
+
+.contact-section {
+    padding: 60px 20px 100px 20px;
+    background-color: var(--black);
+    display: flex;
+    justify-content: center;
+}
+
+.contact-container {
+    max-width: 1100px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; /* Info ocupă mai puțin loc decât formularul */
+    gap: 60px;
+    background: linear-gradient(145deg, #1a1a1a, #121212);
+    padding: 60px;
+    border-radius: 15px;
+    border: 1px solid #333;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+}
+
+/* Info Directe */
+.contact-info .info-item {
+    margin-bottom: 40px;
+}
+
+.contact-info h3 {
+    color: var(--sunset-orange);
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact-info p, 
+.contact-info a {
+    color: #ccc;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: var(--sunset-yellow);
+}
+
+.contact-info strong {
+    color: var(--text-light);
+}
+
+/* --- Instagram Hotlink: Varianta 1 (Gradient Pop) --- */
+/* --- Instagram Hotlink: Varianta 1 (Gradient Pop) --- */
+.ig-hotlink {
+    display: inline-block;
+    padding: 12px 25px;
+    background: transparent;
+    color: var(--text-light) !important;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    border-radius: 8px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+/* Bordura din gradient animat */
+.ig-hotlink::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 8px;
+    padding: 2px; /* Grosimea bordurii */
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+/* Efectul de umplere la hover */
+.ig-hotlink:hover {
+    color: #fff !important;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    transform: translateY(-2px);
+}
+
+.ig-hotlink:hover::before {
+    padding: 100px; /* Umple tot butonul cu gradientul la hover */
+    box-shadow: 0 10px 20px rgba(220, 39, 67, 0.4);
+}
+
+
+
+/* Formularul de Contact */
+.contact-form-container h3 {
+    color: var(--text-light);
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--black);
+    border: 1px solid #444;
+    color: var(--text-light);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--sunset-orange);
+    box-shadow: 0 0 15px rgba(255, 126, 95, 0.2);
+}
+
+.send-btn {
+    padding: 18px;
+    background: linear-gradient(45deg, var(--sunset-orange), var(--sunset-yellow));
+    color: var(--black);
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.send-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 126, 95, 0.4);
+}
+
+/* Responsivitate Mobil */
+@media (max-width: 900px) {
+    .contact-container {
+        grid-template-columns: 1fr; /* O singură coloană pe mobil */
+        padding: 40px 30px;
+        gap: 40px;
+    }
+    
+    .contact-form-container h3 {
+        font-size: 1.5rem;
+    }
+}
+/* =========================================
+   PAGINA EVENIMENTE PRIVATE
+   ========================================= */
+
+.private-events-section {
+    padding: 60px 20px 100px 20px;
+    background-color: var(--black);
+    display: flex;
+    justify-content: center;
+}
+
+.packages-container {
+    max-width: 1200px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.event-package {
+    background: linear-gradient(145deg, #1a1a1a, #121212);
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-package:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+}
+
+/* Diferențierea vizuală a celor două pachete */
+.birthday-package {
+    border-top: 5px solid var(--sunset-orange);
+}
+
+.rental-package {
+    border-top: 5px solid var(--sunset-yellow);
+}
+
+.package-icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    line-height: 1;
+}
+
+.event-package h2 {
+    color: var(--text-light);
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.package-desc {
+    color: #ccc;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.package-features {
+    list-style: none;
+    margin-bottom: 30px;
+    flex-grow: 1; /* Împinge regulile și butonul mereu jos */
+}
+
+.package-features li {
+    color: #ddd;
+    margin-bottom: 15px;
+    padding-left: 25px;
+    position: relative;
+    line-height: 1.5;
+}
+
+.package-features li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--sunset-orange);
+    font-size: 1.2rem;
+}
+
+.rental-package .package-features li::before {
+    color: var(--sunset-yellow); /* Săgeți galbene pentru închiriere privată */
+}
+
+/* Zona de Condiții (Golden Rules - inspirată de La Poma) */
+.golden-rules {
+    background: var(--dark-grey);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border-left: 3px solid #666;
+}
+
+.golden-rules h4 {
+    color: #aaa;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.golden-rules p {
+    color: #999;
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+    font-style: italic;
+}
+
+/* Butoanele de Rezervare */
+.book-btn {
+    display: inline-block;
+    text-align: center;
+    padding: 15px;
+    background: linear-gradient(45deg, var(--sunset-orange), var(--sunset-yellow));
+    color: var(--black);
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.book-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 126, 95, 0.4);
+}
+
+.book-btn.outline {
+    background: transparent;
+    color: var(--sunset-yellow);
+    border: 2px solid var(--sunset-yellow);
+}
+
+.book-btn.outline:hover {
+    background: var(--sunset-yellow);
+    color: var(--black);
+    box-shadow: 0 10px 20px rgba(254, 180, 123, 0.3);
+}
+
+/* Responsivitate (Telefoane și Tablete) */
+@media (max-width: 950px) {
+    .packages-container {
+        grid-template-columns: 1fr; /* Le pune una sub alta pe mobil */
+        gap: 30px;
+    }
+    
+    .event-package {
+        padding: 40px 30px;
+    }
+}
+/* =========================================
+   AUTENTIFICARE & LOGIN PAGE
+   ========================================= */
+
+/* --- Navigare (Lângă Logo) --- */
+.nav-logo-container {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Spațiu între logo și butonul de login */
+}
+
+.auth-btn {
+    border: 1px solid var(--sunset-orange);
+    color: var(--text-light);
+    padding: 5px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.auth-btn:hover {
+    background: var(--sunset-orange);
+    color: var(--black);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* --- Pagina de Login --- */
+.login-section {
+    padding: 120px 20px 100px 20px;
+    background-color: var(--black);
+    display: flex;
+    justify-content: center;
+    min-height: 80vh;
+    align-items: center;
+}
+
+.login-container {
+    background: linear-gradient(145deg, #1a1a1a, #121212);
+    padding: 50px 40px;
+    border-radius: 12px;
+    border: 1px solid #333;
+    max-width: 450px;
+    width: 100%;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    text-align: center;
+}
+
+.login-container h2 {
+    color: var(--sunset-orange);
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.login-container p {
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+.auth-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.send-btn.outline {
+    background: transparent;
+    border: 1px solid #555;
+    color: #ccc;
+}
+
+.send-btn.outline:hover {
+    border-color: var(--sunset-yellow);
+    color: var(--sunset-yellow);
+    box-shadow: none;
+}
+
+.auth-msg {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.auth-msg.error {
+    background: rgba(255, 51, 51, 0.1);
+    color: #ff3333;
+    border: 1px solid #ff3333;
+}
+
+.auth-msg.success {
+    background: rgba(51, 255, 51, 0.1);
+    color: #33ff33;
+    border: 1px solid #33ff33;
+}
+/* =========================================
+   PAGINA CONTUL MEU
+   ========================================= */
+.account-section {
+    padding: 120px 20px 100px 20px;
+    background-color: var(--black);
+    display: flex;
+    justify-content: center;
+    min-height: 80vh;
+}
+
+.account-container {
+    max-width: 900px;
+    width: 100%;
+}
+
+.account-header {
+    background: linear-gradient(145deg, #1a1a1a, #121212);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #333;
+    margin-bottom: 40px;
+}
+
+.account-header h2 {
+    color: var(--sunset-orange);
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+
+.account-header p {
+    color: #ccc;
+    font-size: 1.2rem;
+}
+
+/* Secțiunea Vouchere */
+.rewards-section h3 {
+    color: var(--text-light);
+    font-size: 1.8rem;
+}
+
+.rewards-subtitle {
+    color: #888;
+    margin-bottom: 25px;
+}
+
+.discounts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.discount-card {
+    background: var(--dark-grey);
+    border: 2px dashed var(--sunset-yellow);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+}
+
+.discount-card .percentage {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--sunset-yellow);
+    margin-bottom: 10px;
+}
+
+.discount-card .code {
+    background: #000;
+    padding: 10px;
+    font-family: monospace;
+    font-size: 1.2rem;
+    color: var(--text-light);
+    border-radius: 4px;
+    letter-spacing: 2px;
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Spark Grounds</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-logo-container">
+            <a href="home.html">
+                <img src="logo-small.png" alt="Spark Grounds Logo" class="nav-logo">
+            </a>
+            <div id="auth-widget" class="auth-widget">
+                <a href="login.html" class="auth-btn" id="login-nav-btn">Autentificare</a>
+                <a href="#" class="auth-btn hidden" id="account-nav-btn">Contul Meu</a>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="tickets.html">Bilete</a></li>
+            <li><a href="events.html">Evenimente</a></li>
+            <li><a href="school.html">Școală</a></li>
+            <li><a href="private-event.html">Eveniment Privat</a></li>
+            <li><a href="joc.html">Joc</a></li>
+            <li><a href="contact.html" style="color: var(--sunset-orange);">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-header">
+        <div class="header-content">
+            <h1>Salut! Hai să vorbim.</h1>
+            <p>Fie că e vorba de un eveniment privat, cursuri sau pur și simplu vrei să ne saluți, suntem aici.</p>
+        </div>
+    </header>
+
+    <section class="contact-section">
+        <div class="contact-container">
+            
+            <div class="contact-info">
+                <div class="info-item">
+                    <h3>Telefoane</h3>
+                    <p><strong>Milan:</strong> <a href="tel:+40735652024">+40 735 652 024</a></p>
+                    <p><strong>Darian:</strong> <a href="tel:+40723248737">+40 723 248 737</a></p>
+                </div>
+
+                <div class="info-item">
+                    <h3>Email</h3>
+                    <p><a href="mailto:spark.grounds@yahoo.com">spark.grounds@yahoo.com</a></p>
+                </div>
+
+                <div class="info-item">
+                    <h3>Social Media</h3>
+                    <a href="https://www.instagram.com/spark_grounds?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="ig-hotlink">
+                        Urmărește-ne pe Instagram @spark_grounds
+                    </a>
+                </div>
+
+                <div class="info-item">
+                    <h3>Locație</h3>
+                    <p>Moșnița Nouă, Județul Timiș</p>
+                </div>
+            </div>
+
+            <div class="contact-form-container">
+                <h3>Trimite-ne un mesaj rapid</h3>
+                <form action="mailto:spark.grounds@yahoo.com" method="post" enctype="text/plain" class="contact-form">
+                    <input type="text" name="Nume" placeholder="Numele tău sau al echipei" required>
+                    <input type="text" name="Subiect" placeholder="Subiect (Ex: Eveniment Privat, Info cursuri)" required>
+                    <textarea name="Mesaj" rows="6" placeholder="Cu ce te putem ajuta?" required></textarea>
+                    <button type="submit" class="send-btn">Trimite Mesaj</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer-section">
+        <div class="footer-content">
+            <a href="home.html">
+                <img src="logo-small.png" alt="Spark Grounds Logo" class="footer-logo">
+            </a>
+            <p>&copy; 2026 Spark Grounds. Toate drepturile rezervate.</p>
+        </div>
+    </footer>
+<script type="module" src="auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contul Meu | Spark Grounds</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-logo-container">
+            <a href="home.html">
+                <img src="logo-small.png" alt="Spark Grounds Logo" class="nav-logo">
+            </a>
+            <div id="auth-widget" class="auth-widget">
+                <a href="#" class="auth-btn" id="logout-btn">Deconectare</a>
+            </div>
+        </div>
+        <button id="logout-btn" class="send-btn outline" style="margin-top: 20px;">Deconectare</button>
+        <ul class="nav-links">
+            <li><a href="tickets.html">Bilete</a></li>
+            <li><a href="events.html">Evenimente</a></li>
+            <li><a href="school.html">Școală</a></li>
+            <li><a href="private-event.html">Eveniment Privat</a></li>
+            <li><a href="joc.html">Joc</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="account-section">
+        <div class="account-container">
+            
+            <div class="account-header">
+                <h2>Salut, Rider!</h2>
+                <p id="user-email-display">Se încarcă profilul...</p>
+            </div>
+
+            <div class="rewards-section">
+                <h3>Voucherele tale câștigate</h3>
+                <p class="rewards-subtitle">Folosește aceste coduri la intrarea în parc.</p>
+                
+                <div id="discounts-grid" class="discounts-grid">
+                    <p id="no-discounts-msg" style="color: #888;">Nu ai câștigat nicio reducere încă. Joacă Virtual Ride și fă un scor bun!</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer-section">
+        <div class="footer-content">
+            <p>&copy; 2026 Spark Grounds.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="account.js"></script>
+</body>
+</html>

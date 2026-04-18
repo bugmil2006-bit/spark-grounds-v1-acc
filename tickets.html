@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilete & Abonamente | Spark Grounds</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-logo-container">
+            <a href="home.html">
+                <img src="logo-small.png" alt="Spark Grounds Logo" class="nav-logo">
+            </a>
+            <div id="auth-widget" class="auth-widget">
+                <a href="login.html" class="auth-btn" id="login-nav-btn">Autentificare</a>
+                <a href="#" class="auth-btn hidden" id="account-nav-btn">Contul Meu</a>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="tickets.html" style="color: var(--sunset-orange);">Bilete</a></li>
+            <li><a href="events.html">Evenimente</a></li>
+            <li><a href="school.html">Școală</a></li>
+            <li><a href="private-event.html">Eveniment Privat</a></li>
+            <li><a href="joc.html">Joc</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-header">
+        <div class="header-content">
+            <h1>Bilete & Abonamente</h1>
+            <p>Alege pass-ul potrivit pentru tine. Ridicarea si plata brățărilor se face direct la intrarea în parc.</p>
+        </div>
+    </header>
+
+    <section class="tickets-section">
+        <div class="tickets-grid">
+            
+            <div class="ticket-card">
+                <h3>Day Pass</h3>
+                <div class="price">25 Lei</div>
+                <div class="duration">O zi întreagă</div>
+                <p>Acces complet pe toate liniile de dirt și zonele de flow până la apus.</p>
+            </div>
+
+            <div class="ticket-card popular-ticket">
+                <div class="ticket-badge">Alegerea Riderilor</div>
+                <h3>Weekend Warrior</h3>
+                <div class="price">40 Lei</div>
+                <div class="duration">Sâmbătă + Duminică</div>
+                <p>Progresie maximă. Valabil tot weekendul, perfect pentru a-ți perfecționa trick-urile.</p>
+            </div>
+
+            <div class="ticket-card">
+                <h3>Abonament Lunar</h3>
+                <div class="price">200 Lei</div>
+                <div class="duration">30 de Zile</div>
+                <p>Intrări nelimitate timp de o lună. Include un pass gratuit pentru un prieten (o singură dată).</p>
+            </div>
+
+            <div class="ticket-card">
+                <h3>Season Pass</h3>
+                <div class="price">600 Lei</div>
+                <div class="duration">Tot Sezonul</div>
+                <p>Ești de-al casei. Intrări nelimitate tot anul, 10% reducere la merch și prioritate la evenimente.</p>
+            </div>
+
+        </div>
+
+        <div class="regulament-container">
+            <p class="regulament-text">Siguranța ta și a celorlalți este prioritatea noastră absolută.</p>
+            <a href="regulament.html" class="hotlink-regulament">
+                <span class="icon">⚠️</span> Citește Regulamentul Oficial al Parcului &rarr;
+            </a>
+        </div>
+        
+        <div class="discount-info">
+            <p>*Riderii sub 7 ani, seniorii (65+) și persoanele cu dizabilități beneficiază de <strong>30% reducere</strong> la orice bilet la prezentarea unui act de identitate fizic la intrare.</p>
+        </div>
+    </section>
+
+    <footer class="footer-section">
+        <div class="footer-content">
+            <a href="home.html">
+                <img src="logo-small.png" alt="Spark Grounds Logo" class="footer-logo">
+            </a>
+            <p>Pentru întrebări și rezervări:</p>
+            <a href="mailto:spark.grounds@yahoo.com" class="footer-email">spark.grounds@yahoo.com</a>
+            <p class="copyright">&copy; 2026 Spark Grounds. Toate drepturile rezervate.</p>
+        </div>
+    </footer>
+<script type="module" src="auth.js"></script>
+</body>
+</html>

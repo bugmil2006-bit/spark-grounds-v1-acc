@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evenimente | Spark Grounds</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-logo-container">
+            <a href="home.html">
+                <img src="logo-small.png" alt="Spark Grounds Logo" class="nav-logo">
+            </a>
+            <div id="auth-widget" class="auth-widget">
+                <a href="login.html" class="auth-btn" id="login-nav-btn">Autentificare</a>
+                <a href="#" class="auth-btn hidden" id="account-nav-btn">Contul Meu</a>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="tickets.html">Bilete</a></li>
+            <li><a href="events.html" style="color: var(--sunset-orange);">Evenimente</a></li>
+            <li><a href="school.html">Școală</a></li>
+            <li><a href="private-event.html">Eveniment Privat</a></li>
+            <li><a href="joc.html">Joc</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-header events-header">
+        <div class="header-content">
+            <h1>Evenimente Oficiale</h1>
+            <p>Află ce se întâmplă pe traseu. Competiții, jam-uri și premiere.</p>
+            
+            <a href="contact.html" class="add-event-btn" title="Propune un eveniment">
+                <span class="plus-icon">+</span>
+                <span class="btn-text">Propune Eveniment</span>
+            </a>
+        </div>
+    </header>
+
+    <section class="events-main-section">
+        <div class="events-grid">
+            
+            <a href="event-grand-opening.html" class="event-card-link">
+                <div class="event-card grand-opening-card">
+                    <div class="event-status">În Curând</div>
+                    <div class="event-date">Vara 2026</div>
+                    <h3>Spark Grounds Grand Opening</h3>
+                    <p>Momentul mult așteptat. Deschiderea oficială a parcului. Așteaptă-te la best trick contests, muzică live, whip-off contest și un apus epic. Detaliile complete vor fi anunțate curând.</p>
+                    <span class="read-more">Află mai multe &rarr;</span>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <footer class="footer-section">
+        <div class="footer-content">
+            <a href="home.html">
+                <img src="logo-small.png" alt="Spark Grounds Logo" class="footer-logo">
+            </a>
+            <p>Pentru întrebări și rezervări:</p>
+            <a href="mailto:spark.grounds@yahoo.com" class="footer-email">spark.grounds@yahoo.com</a>
+            <p class="copyright">&copy; 2026 Spark Grounds. Toate drepturile rezervate.</p>
+        </div>
+    </footer>
+<script type="module" src="auth.js"></script>
+</body>
+</html>

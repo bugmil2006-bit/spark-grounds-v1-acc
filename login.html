@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autentificare | Spark Grounds</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-logo-container">
+            <a href="home.html">
+                <img src="logo-small.png" alt="Spark Grounds Logo" class="nav-logo">
+            </a>
+           <div id="auth-widget" class="auth-widget">
+                <a href="login.html" class="auth-btn" id="login-nav-btn" style="display: none;">Autentificare</a>
+                <a href="accounts.html" class="auth-btn" id="account-nav-btn" style="display: none;">Contul Meu</a>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="tickets.html">Bilete</a></li>
+            <li><a href="events.html">Evenimente</a></li>
+            <li><a href="school.html">Școală</a></li>
+            <li><a href="private-event.html">Eveniment Privat</a></li>
+            <li><a href="joc.html">Joc</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="login-section">
+        <div class="login-container">
+            <h2>Acces Rider</h2>
+            <p>Conectează-te pentru a-ți vedea biletele și scorurile.</p>
+            
+            <form id="auth-form" class="contact-form">
+                <input type="email" id="email" placeholder="Adresa de Email" required>
+                <input type="password" id="password" placeholder="Parola" required minlength="6">
+                
+                <div class="auth-buttons">
+                    <button type="submit" id="login-btn" class="send-btn">Intră în cont</button>
+                    <button type="button" id="register-btn" class="send-btn outline">Creează Cont Nou</button>
+                </div>
+                
+                <div id="auth-message" class="auth-msg hidden"></div>
+            </form>
+        </div>
+    </section>
+
+    <script type="module" src="auth.js"></script>
+
+</body>
+</html>

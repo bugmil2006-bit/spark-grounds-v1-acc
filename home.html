@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spark Grounds | 360 Dirt Park</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-logo-container">
+            <a href="home.html">
+                <img src="logo-small.png" alt="Spark Grounds Logo" class="nav-logo">
+            </a>
+            <div id="auth-widget" class="auth-widget">
+                <a href="login.html" class="auth-btn" id="login-nav-btn">Autentificare</a>
+                <a href="accounts.html" class="auth-btn hidden" id="account-nav-btn">Contul Meu</a>
+            </div>
+        </div>
+           
+        <ul class="nav-links">
+            <li><a href="tickets.html">Bilete</a></li>
+            <li><a href="events.html">Evenimente</a></li>
+            <li><a href="school.html">Școală</a></li>
+            <li><a href="private-event.html">Eveniment Privat</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="joc.html">Joc</a></li>
+        </ul>
+    </nav>
+
+    <section class="map-section" id="map-section">
+        <h2>Explorează Spark Grounds</h2>
+        <div class="model-container" id="model-box">
+            <model-viewer 
+                src="dirt-3.0.glb" 
+                alt="Randare 3D a parcului Spark Grounds" 
+                auto-rotate 
+                camera-controls 
+                shadow-intensity="1" 
+                field-of-view="90deg" 
+                min-camera-orbit="auto 75deg auto"
+                max-camera-orbit="auto 75deg auto"
+                disable-zoom>
+            </model-viewer>
+        </div>
+    </section>
+
+    <section class="story-section">
+        <div class="story-container">
+            <h2 class="story-title">Construit de Rideri, pentru Apus</h2>
+            <p class="story-text">
+                Spark Grounds a început cu o viziune simplă: să creăm flow-ul perfect în "golden hour". 
+                Ceea ce a început ca o simplă linie de pământ a crescut într-un centru al comunității unde fiecare 
+                săritură este o capodoperă, iar fiecare aterizare este muncită. Nu construim doar trasee; 
+                creăm experiențe care rămân cu tine mult timp după ce soarele apune.
+            </p>
+            <div class="story-accent-line"></div>
+        </div>
+    </section>
+
+    <section id="videos" class="video-section">
+        <h2>Ultimele Acțiuni pe Traseu</h2>
+        <div class="carousel-container">
+            <button class="carousel-btn" id="prevBtn">&#10094;</button>
+            
+            <div class="video-display">
+                <div class="video-wrapper slide left">
+                    <video src="v1_fin.mp4" controls preload="metadata" poster="thumbnail1.jpg"></video>
+                </div>
+
+                <div class="video-wrapper slide center">
+                    <video src="v1_fin.mp4" controls preload="metadata" poster="thumbnail2.jpg"></video>
+                </div>
+
+                <div class="video-wrapper slide right">
+                    <video src="v1_fin.mp4" controls preload="metadata" poster="thumbnail3.jpg"></video>
+                </div>
+            </div>
+
+            <button class="carousel-btn" id="nextBtn">&#10095;</button>
+        </div>
+    </section>
+
+    <footer class="footer-section">
+        <div class="footer-content">
+            <a href="home.html">
+                <img src="logo-small.png" alt="Spark Grounds Logo" class="footer-logo">
+            </a>
+            <p>Pentru întrebări și rezervări:</p>
+            <a href="mailto:spark.grounds@yahoo.com" class="footer-email">spark.grounds@yahoo.com</a>
+            <p class="copyright">&copy; 2026 Spark Grounds. Toate drepturile rezervate.</p>
+        </div>
+    </footer>
+<script type="module" src="auth.js"></script>
+    <script src="slider.js"></script>
+</body>
+</html>
